@@ -1,0 +1,102 @@
+.booknow {
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   bottom: -11rem;
+   z-index: 100;
+   height: 12rem;
+   width: 80%;
+
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+   justify-items: center;
+   align-items: center;
+
+   padding: 2rem;
+   margin-left: auto;
+   margin-right: auto;
+
+   border-bottom-left-radius: 8px;
+   border-bottom-right-radius: 8px;
+   border-top-right-radius: 8px;
+
+   background-color: white;
+   color: black;
+   box-shadow: 1.9px 4.3px 2.2px rgba(0, 0, 0, 0.02),
+      4.6px 10.4px 5.3px rgba(0, 0, 0, 0.028),
+      8.6px 19.5px 10px rgba(0, 0, 0, 0.035),
+      15.4px 34.8px 17.9px rgba(0, 0, 0, 0.042),
+      28.8px 65.2px 33.4px rgba(0, 0, 0, 0.05),
+      69px 156px 80px rgba(0, 0, 0, 0.07);
+
+   &__header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0rem 1rem;
+      height: 3rem;
+      background-color: #dd5551;
+      color: white;
+      position: absolute;
+      top: -3rem;
+      left: 0;
+
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      box-shadow: 0px -5px 15px white;
+   }
+   &__item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      &__icon {
+         font-size: 2.2rem;
+         color: #0177fb;
+      }
+      &__main {
+         display: flex;
+         flex-direction: column;
+         gap: 0.5rem;
+         font-size: 1.5rem;
+      }
+   }
+   &__btn {
+      background-color: #423e25;
+      color: white;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: 0.3s;
+      border-radius: 4px;
+      &:hover {
+         opacity: 0.8;
+      }
+      &:active {
+         opacity: 1;
+      }
+   }
+
+   // delete arrow in input[number]
+   /* Chrome, Safari, Edge, Opera */
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+   }
+   /* Firefox */
+   input[type="number"] {
+      -moz-appearance: textfield;
+   }
+   input {
+      border: none;
+      outline: none;
+      border-bottom: 2px solid black;
+      &::placeholder {
+         content: "enter your number";
+      }
+      &:focus {
+         border-bottom: 2px solid lightblue;
+      }
+   }
+}

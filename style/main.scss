@@ -1,0 +1,10 @@
+// base
+@import "./base/typography", "./base/reset";
+// utils
+@import "./utils/helpers";
+// layout
+@import "./layout/header", "./layout/booknow";
+// pages
+@import "./pages/hero", "./pages/services", "./pages/countries";
+
+@import "./base/animation";

@@ -1,0 +1,29 @@
+.header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   padding-top: 3rem;
+   padding-bottom: 3rem;
+   &__logo {
+      border: 4px solid black;
+      background-color: #4e452e;
+      color: white;
+      cursor: pointer;
+   }
+   &__links {
+      ul {
+         display: contents;
+      }
+      display: flex;
+      gap: 4rem;
+   }
+   &__register {
+      border: 2px solid black;
+      padding: 0.2rem;
+      transition: 0.3s;
+      &:hover {
+         border: 2px solid transparent;
+      }
+   }
+}

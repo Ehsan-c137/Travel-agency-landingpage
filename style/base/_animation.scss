@@ -1,0 +1,37 @@
+.hover-link-animation {
+   position: relative;
+   transition: 0.3s;
+   &:hover {
+      color: white;
+   }
+   &:active {
+      color: black;
+   }
+}
+.hover-link-animation::before {
+   content: "";
+   position: absolute;
+   z-index: -1;
+   width: 110%;
+   height: 100%;
+   padding: 5px;
+
+   background-color: #4e452e;
+
+   bottom: 0px;
+   left: -5%;
+
+   transform-origin: right;
+   transform: scaleX(0);
+   transition: transform 0.3s ease-in-out;
+}
+
+.hover-link-animation:hover::before {
+   transform-origin: left;
+
+   transform: scaleX(1);
+}
+.hover-link-animation:active::before {
+   background-color: white;
+   color: black;
+}
