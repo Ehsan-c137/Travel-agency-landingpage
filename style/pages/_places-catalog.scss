@@ -1,0 +1,57 @@
+.places-catalog {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 6rem;
+
+   &__image {
+      border-radius: 0.7rem;
+      object-fit: cover;
+      height: 30rem;
+      width: 100%;
+   }
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+   font-size: 3rem;
+   cursor: pointer;
+}
+
+.swiper-slide {
+   position: relative;
+   transition: 0.5s;
+}
+.places-catalog__desc {
+   opacity: 0;
+   transition: 0.5s;
+}
+.places-catalog__image__desc {
+   width: 100%;
+   height: 5rem;
+   position: absolute;
+   display: flex;
+   z-index: 100;
+   top: 0px;
+
+   color: white;
+   background-color: rgba(0, 0, 0, 0.511);
+   transition: 0.5s;
+   border-top-right-radius: 0.7rem;
+   border-top-left-radius: 0.7rem;
+   font-size: 2rem;
+   &:hover {
+      transition: 0.5s;
+      height: 15rem;
+      .places-catalog__desc {
+         opacity: 1;
+      }
+   }
+   p {
+      padding: 1rem 2rem;
+   }
+}
+
+// .swiper-pagination {
+//    bottom: -20px !important;
+// }

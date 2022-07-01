@@ -5,6 +5,32 @@
 // layout
 @import "./layout/header", "./layout/booknow";
 // pages
-@import "./pages/hero", "./pages/services", "./pages/countries";
+@import "./pages/hero", "./pages/services", "./pages/offer",
+   "./pages/places-catalog";
 
 @import "./base/animation";
+
+// gototop
+.go-to-top {
+   position: fixed;
+   right: 5px;
+   bottom: 5px;
+   width: 3rem;
+   height: 3rem;
+   border-radius: 50%;
+   background-color: #28251459;
+   color: white;
+   cursor: pointer;
+   transition: 0.5s;
+   i {
+      transition: 0.5s;
+   }
+   &:hover {
+      i {
+         transform: translateY(-2px);
+      }
+   }
+}
+.hidden-btn {
+   display: none;
+}

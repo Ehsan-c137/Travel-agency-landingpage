@@ -5,6 +5,11 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link
+         rel="shortcut icon"
+         href="./assets/images/favicon.png"
+         type="image/x-icon"
+      />
+      <link
          rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
@@ -12,11 +17,17 @@
          referrerpolicy="no-referrer"
       />
       <link rel="stylesheet" href="./style/main.css" />
-      <script src="./assets/JS/optionTag.js"></script>
+      <link
+         rel="stylesheet"
+         href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+      />
+
+      <script defer src="./assets/JS/offer.js"></script>
+      <script defer src="./assets/JS/general.js"></script>
       <title>Mr.srudio</title>
    </head>
    <body>
-      <header id="header" class="header container">
+      <header id="header" class="header">
          <div class="header__logo"><a href="./index.html"> MR.srudio</a></div>
          <div class="header__links">
             <ul>
@@ -37,6 +48,14 @@
          </div>
       </header>
       <main>
+         <img
+            class="paper-plane"
+            src="./assets/images/paperplane.png"
+            alt="paper-plane"
+         />
+         <button class="go-to-top hidden-btn">
+            <i class="fa-solid fa-chevron-up"></i>
+         </button>
          <div class="hero container">
             <div class="hero__round-image__container">
                <img
@@ -63,7 +82,7 @@
             <div class="hero__left">
                <h1 class="hero__left__header">
                   plan your Trip <br />
-                  with Travel Hous
+                  with us
                </h1>
                <p class="hero__left__explanation">
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo
@@ -94,40 +113,40 @@
                   <a href="#booknow"> Online Booking</a>
                </p>
                <div class="booknow__place booknow__item" id="booknow">
-                  <i
+                  <!-- <i
                      class="fa-solid fa-earth-africa booknow__place__icon booknow__item__icon"
-                  ></i>
+                  ></i> -->
                   <div class="booknow__place__choose booknow__item__main">
-                     <label for="choose-place">Choose your place</label>
                      <select id="place" name="choose-place">
                         <option value="london">London</option>
                         <option value="Los Angeles">Los Angeles</option>
                         <option value="Qatar">Qatar</option>
                         <option value="Tokyo">Tokyo</option>
                      </select>
+                     <label for="choose-place">City</label>
                   </div>
                </div>
                <div class="booknow__date booknow__item">
-                  <i class="fa-solid fa-calendar-days booknow__item__icon"></i>
+                  <!-- <i class="fa-solid fa-calendar-days booknow__item__icon"></i> -->
                   <div class="booknow__item__main">
-                     <label for="booknow-date">Date</label>
                      <input type="date" name="booknow-date" />
+                     <label for="booknow-date">Date</label>
                   </div>
                </div>
 
                <div class="booknow__item">
-                  <i class="fa-solid fa-phone booknow__item__icon"></i>
+                  <!-- <i class="fa-solid fa-phone booknow__item__icon"></i> -->
                   <div class="booknow__item__main">
-                     <label for="booknow-number">Phone</label>
                      <input
                         type="number"
                         name="booknow-number"
-                        placeholder="+98 102 125 2252"
+                        placeholder="Enter your number"
                      />
+                     <label for="booknow-number">Phone</label>
                   </div>
                </div>
-               <div>
-                  <button class="booknow__btn">Book now</button>
+               <div class="booknow__btn">
+                  <p>Book now</p>
                </div>
             </div>
          </div>
@@ -138,7 +157,7 @@
                   <div class="services__item__icon">
                      <i class="fa-solid fa-basket-shopping"></i>
                   </div>
-                  <p class="bold-text">A lot of Descount</p>
+                  <p class="bold-text">A lot of Discount</p>
                   <p>
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Voluptates, modi.
@@ -148,7 +167,7 @@
                   <div class="services__item__icon">
                      <i class="fa-solid fa-user-large"></i>
                   </div>
-                  <p class="bold-text">A lot of Descount</p>
+                  <p class="bold-text">Best guide</p>
                   <p>
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Voluptates, modi.
@@ -158,7 +177,7 @@
                   <div class="services__item__icon">
                      <i class="fa-solid fa-headset"></i>
                   </div>
-                  <p class="bold-text">A lot of Descount</p>
+                  <p class="bold-text">Online support</p>
                   <p>
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Voluptates, modi.
@@ -168,7 +187,7 @@
                   <div class="services__item__icon">
                      <i class="fa-solid fa-list-check"></i>
                   </div>
-                  <p class="bold-text">A lot of Descount</p>
+                  <p class="bold-text">Management</p>
                   <p>
                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                      Voluptates, modi.
@@ -176,17 +195,244 @@
                </div>
             </div>
          </div>
-         <div class="countries container">
-            <div class="countries__icon"><i class="fa-solid fa-plane"></i></div>
-            <div class="countries__header">
-               <h3>Countries travel</h3>
-               <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas
-                  aliquid voluptatem eaque voluptate sapiente, officiis fuga.
-                  Iure, est? Perspiciatis, eaque?
-               </p>
+         <div class="offer container">
+            <h4 class="offer__cont__header">What Kind We Offer For you</h4>
+            <p class="offer__header__sub">
+               We are here with various types of offers that you can get with
+               your family in Bali with Bali Tour
+            </p>
+            <div class="offer__items__container">
+               <!--  -->
+               <div class="offer__items">
+                  <div class="offer__items__wrapper">
+                     <img
+                        class="offer__image"
+                        src="./assets/images/offer-image-1.jpg"
+                        alt="best places to offer"
+                     />
+                     <p class="offer__number">01</p>
+                     <p class="offer__header">Various <br />Destinations</p>
+                     <p class="offer__desc">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Qui velit debitis magnam ad? Corrupti odio, nemo
+                        eligendi
+                        <span class="offer__desc__hidden">
+                           consequatur facilis dolorem sit ex minima reiciendis
+                           suscipit harum! Quis veniam voluptates consectetur
+                           obcaecati libero nesciunt a delectus. explicabo
+                           ducimus inventore asperiores labore reiciendis,
+                           suscipit harum! Quis veniam voluptates consectetur
+                           obcaecati libero nesciunt a delectus.
+                        </span>
+                     </p>
+                  </div>
+                  <div class="offer__learnmore" tabindex="0">
+                     <p>LEARN MORE</p>
+                     <i
+                        class="fa-solid fa-angle-right offer__learnmore__arrow"
+                     ></i>
+                  </div>
+               </div>
+               <div class="offer__items">
+                  <div class="offer__items__wrapper">
+                     <img
+                        class="offer__image"
+                        src="./assets/images/offer-image-2.jpg"
+                        alt="best places to offer"
+                     />
+                     <p class="offer__number">02</p>
+                     <p class="offer__header">Everything is <br />Included</p>
+                     <p class="offer__desc">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Qui velit debitis magnam ad? Corrupti odio, nemo
+                        eligendi
+                        <span class="offer__desc__hidden">
+                           consequatur facilis dolorem sit ex minima reiciendis
+                           suscipit harum! Quis veniam voluptates consectetur
+                           obcaecati libero nesciunt a delectus. explicabo
+                           ducimus inventore asperiores labore reiciendis,
+                           suscipit harum! Quis veniam voluptates consectetur
+                           obcaecati libero nesciunt a delectus.
+                        </span>
+                     </p>
+                  </div>
+                  <div class="offer__learnmore" tabindex="0">
+                     <p>LEARN MORE</p>
+                     <i
+                        class="fa-solid fa-angle-right offer__learnmore__arrow"
+                     ></i>
+                  </div>
+               </div>
+               <div class="offer__items">
+                  <div class="offer__items__wrapper">
+                     <img
+                        class="offer__image"
+                        src="./assets/images/offer-image-3.jpg"
+                        alt="best places to offer"
+                     />
+                     <p class="offer__number">03</p>
+                     <p class="offer__header">Affordable <br />Prices</p>
+                     <p class="offer__desc">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing
+                        elit. Qui velit debitis magnam ad? Corrupti odio, nemo
+                        eligendi
+                        <span class="offer__desc__hidden">
+                           consequatur facilis dolorem sit ex minima reiciendis
+                           suscipit harum! Quis veniam voluptates consectetur
+                           obcaecati libero nesciunt a delectus. explicabo
+                           ducimus inventore asperiores labore reiciendis,
+                           suscipit harum! Quis veniam voluptates consectetur
+                           obcaecati libero nesciunt a delectus.
+                        </span>
+                     </p>
+                  </div>
+                  <div class="offer__learnmore" tabindex="0">
+                     <p>LEARN MORE</p>
+                     <i
+                        class="fa-solid fa-angle-right offer__learnmore__arrow"
+                     ></i>
+                  </div>
+               </div>
+            </div>
+            <!-- offer__items end -->
+         </div>
+         <div class="places-catalog container">
+            <div class="swiper">
+               <!-- Additional required wrapper -->
+               <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="swiper-slide">
+                     <img
+                        class="places-catalog__image"
+                        src="./assets/images/swiper-image-1.jpg"
+                        alt="Losangeles"
+                     />
+                     <div class="places-catalog__image__desc">
+                        <p>
+                           LA <br />
+                           <br />
+                           <span class="places-catalog__desc">
+                              Lorem, ipsum dolor sit amet consectetur
+                              adipisicing elit. Perspiciatis, dolorem!
+                           </span>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <img
+                        class="places-catalog__image"
+                        src="./assets/images/swiper-image-2.jpg"
+                        alt="London"
+                     />
+                     <div class="places-catalog__image__desc">
+                        <p>
+                           London <br />
+                           <br />
+                           <span class="places-catalog__desc">
+                              Lorem, ipsum dolor sit amet consectetur
+                              adipisicing elit. Perspiciatis, dolorem!
+                           </span>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <img
+                        class="places-catalog__image"
+                        src="./assets/images/swiper-image-3.jpg"
+                        alt="Qatar"
+                     />
+                     <div class="places-catalog__image__desc">
+                        <p>
+                           Qatar <br />
+                           <br />
+                           <span class="places-catalog__desc">
+                              Lorem, ipsum dolor sit amet consectetur
+                              adipisicing elit. Perspiciatis, dolorem!
+                           </span>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="swiper-slide">
+                     <img
+                        class="places-catalog__image"
+                        src="./assets/images/swiper-image-4.jpg"
+                        alt="Tokyo"
+                     />
+                     <div class="places-catalog__image__desc">
+                        <p>
+                           Tokyo <br />
+                           <br />
+                           <span class="places-catalog__desc">
+                              Lorem, ipsum dolor sit amet consectetur
+                              adipisicing elit. Perspiciatis, dolorem!
+                           </span>
+                        </p>
+                     </div>
+                  </div>
+                  ...
+               </div>
+               <!-- If we need pagination -->
+               <div class="swiper-pagination"></div>
+
+               <!-- If we need navigation buttons -->
+               <div class="swiper-button-prev">
+                  <i class="fa-solid fa-chevron-left"></i>
+               </div>
+               <div class="swiper-button-next">
+                  <i class="fa-solid fa-chevron-right"></i>
+               </div>
             </div>
          </div>
       </main>
+
+      <!-- gsap -->
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenLite.min.js"
+         integrity="sha512-/8phkpsAzxsbuX18zNkQ2gCq4Q5JsWoPo1jHLDeZorPUHRtx9YJxpdk+os05oDhPJVCNzA2/NMl4rmJyQ+6Fvg=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineLite.min.js"
+         integrity="sha512-I0VFyPo7hdM7YrEbQ0pvX4bX2904k0+B19u/xBrPrQoMprfcSnIDfGFD8kP52GbAhwtDjkEVhXlQvj8+vkJyew=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/CSSPlugin.min.js"
+         integrity="sha512-ht40uOoiTef4nKq0THVzjIGh3VS108J577LVVgNXnQLXza3doXjoM3owin2vd+Hm6w88k12RIrePIVY2WNzz6Q=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/plugins/BezierPlugin.min.js"
+         integrity="sha512-oOy5+mtZRcqjn6b9k4oj+tk2/hVIetzOAM9Y5cndEHgLxiIGavAz1agbHf6JjGzxXZ2SMbu08Uy1DDF0UwA0qQ=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+      <!-- scroll magic -->
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"
+         integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js"
+         integrity="sha512-mq6TSOBEH8eoYFBvyDQOQf63xgTeAk7ps+MHGLWZ6Byz0BqQzrP+3GIgYL+KvLaWgpL8XgDVbIRYQeLa3Vqu6A=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+      <script
+         src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"
+         integrity="sha512-5/OHwmQzDSBS0Ous4/hlYoWLHd06/d2r7LdKZQVBXOA6PvOqWVXtdboiLTU7lQTGyVoKVTNkwi0ol4gHGlw5ww=="
+         crossorigin="anonymous"
+         referrerpolicy="no-referrer"
+      ></script>
+
+      <script src="./assets/JS/paper-plane.js"></script>
+      <!-- swiper -->
+      <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+      <script src="./assets/JS/swiper-places.js"></script>
    </body>
 </html>

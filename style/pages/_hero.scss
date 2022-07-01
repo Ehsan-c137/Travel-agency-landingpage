@@ -3,6 +3,7 @@
    grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
    align-items: center;
    position: relative;
+   padding-top: 10rem;
    &__left {
       display: grid;
       grid-template-columns: 1fr;
@@ -16,6 +17,7 @@
 
       &__header {
          font-size: 6.2rem;
+         color: #423e25;
       }
 
       &__more {
@@ -49,8 +51,6 @@
       }
    }
    &__right {
-      background-color: red;
-
       img {
          object-fit: cover;
          height: 60rem;
@@ -92,12 +92,10 @@
          width: 5rem;
          height: 5rem;
       }
-      transition: 0.3s;
+      transition: 0.3s all;
       box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.253);
       &:hover {
-         padding: 0rem;
-         width: 20rem;
-         height: 20rem;
+         transform: scale(3);
          object-fit: cover;
          box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.212);
       }
